@@ -1,6 +1,7 @@
 package india.com.laundryapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -18,6 +19,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+
+import com.andexert.library.RippleView;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.materialdrawer.AccountHeader;
@@ -40,13 +43,15 @@ import india.com.laundryapp.fragments.MenFragment;
 import india.com.laundryapp.fragments.OthersFragment;
 import india.com.laundryapp.fragments.WomenFragment;
 
-public class MainActivity extends AppCompatActivity implements OnClickListener{
+public class MainActivity extends AppCompatActivity implements RippleView.OnRippleCompleteListener{
     private Drawer result;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ArrayList<String> menuOptions = new ArrayList<String>();
     private MenuListAdapter adapter = null;
     private ListView menuList;
+    private RippleView rippleDrawerIcon;
+    private RippleView rippleCarIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,14 +66,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         tabLayout.setupWithViewPager(viewPager);
        // setupTabIcons();
         TextView toolbarTitle = (TextView)toolbar.findViewById(R.id.toolbarTitle);
-        ImageView iconToolbarDrawer = (ImageView)toolbar.findViewById(R.id.iconDrawerButton);
-        ImageView iconMarketButton = (ImageView)toolbar.findViewById(R.id.iconMarketButton);
-
+       rippleDrawerIcon =(RippleView)toolbar.findViewById(R.id.ripple1);
+        rippleCarIcon =(RippleView)toolbar.findViewById(R.id.ripple2);
 
         menuList = (ListView)findViewById(R.id.menuList);
         toolbarTitle.setText(getString(R.string.app_name));
-        iconToolbarDrawer.setOnClickListener(this);
-        iconMarketButton.setOnClickListener(this);
+        rippleDrawerIcon.setOnRippleCompleteListener(this);
+        rippleCarIcon.setOnRippleCompleteListener(this);
         SecondaryDrawerItem item1 = new SecondaryDrawerItem().withName(R.string.title_section1).withIcon(GoogleMaterial.Icon.gmd_location_on);
         SecondaryDrawerItem item2 = new SecondaryDrawerItem().withName(R.string.title_section2).withIcon(FontAwesome.Icon.faw_bus);
 
@@ -159,6 +163,18 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         viewPager.setAdapter(adapter);
     }
 
+    @Override
+    public void onComplete(RippleView rippleView) {
+        switch (rippleView.getId()){
+            case R.id.ripple1:
+                result.openDrawer();
+                break;
+            case R.id.ripple2:
+                goToCarShopScreen();
+                break;
+        }
+    }
+
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
@@ -216,18 +232,5 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         startActivity(intent);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.iconDrawerButton:
-                    result.openDrawer();
-                break;
-            case R.id.iconMarketButton:
-                goToCarShopScreen();
-                break;
-            default:
-                break;
 
-        }
-    }
 }

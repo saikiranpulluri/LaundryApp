@@ -44,16 +44,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"/>
+        <com.andexert.library.RippleView
+            android:id="@+id/ripple2"
+            rv_centered="true"
+            rv_rippleDuration="100"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"></com.andexert.library.RippleView>
 
         <ImageView
             android:id="@+id/iconMarketButtonCheckout"
-            android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:src="@drawable/ic_left_arrow"
-            android:padding="8dp"
-            android:onClick="imageClick"/>
-
+            android:adjustViewBounds="true"
+            android:padding="10dp"
+            android:onClick="imageClick"
+            android:layout_alignBottom="@+id/checkOutCartImage"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 </RelativeLayout>

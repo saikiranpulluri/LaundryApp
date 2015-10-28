@@ -108,10 +108,10 @@ public class OrderingActivity extends AppCompatActivity {
             }
         });
         products = new ArrayList<>();
-        products.add(0, new Product("Shirt/Tshirt", "RS.20", ""));
-        products.add(1, new Product("Trouser/Denim/Jeans", "Rs.30", ""));
+        products.add(0, new Product("Shirt/Tshirt", "RS.20", "0"));
+        products.add(1, new Product("Trouser/Denim/Jeans", "Rs.30", "0"));
         products.add(2, new Product("Jacket", "Rs.40", ""));
-        products.add(3, new Product("Sweater/Sweatshirt", "Rs.20", ""));
+        products.add(3, new Product("Sweater/Sweatshirt", "Rs.20", "0"));
         OrdersAdapter adapter = new OrdersAdapter(this, products);
         lstOrders.setAdapter(adapter);
     }
