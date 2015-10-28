@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/default_toolbar"></include>
+
+    <ListView
+        android:id="@+id/lstOrders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolBar"
+        android:layout_gravity="center_horizontal" />
+
+    <!--<include-->
+        <!--android:id="@+id/checkOutLayer"-->
+        <!--layout="@layout/fragment_checkout"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"></include>-->
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_dark"
+        android:elevation="8dp"
+        android:clipToPadding="false">
+
+        <ImageView
+            android:id="@+id/checkOutCartImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:src="@drawable/ic_cart"/>
+
+        <TextView
+            android:id="@+id/checkoutTotalCost"
+            android:text="Rs.200"
+            android:layout_toRightOf="@id/checkOutCartImage"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"/>
+
+        <ImageView
+            android:id="@+id/iconMarketButtonCheckout"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_left_arrow"
+            android:padding="8dp"
+            android:onClick="imageClick"/>
+
+    </RelativeLayout>
+</RelativeLayout>

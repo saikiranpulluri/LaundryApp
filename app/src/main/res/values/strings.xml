@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Washable</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_section_title1">My Information</string>
+    <string name="title_section_title2">Others</string>
+    <string name="title_section1">My Addresses</string>
+    <string name="title_section2">My Orders</string>
+    <string name="title_section3">Order Track</string>
+    <string name="title_section4">FAQs</string>
+    <string name="title_section5">About L Works</string>
+    <string name="title_section6">Logout</string>
+
+    <string name="tab_title_1">Men</string>
+    <string name="tab_title_2">Women</string>
+    <string name="tab_title_3">Children</string>
+    <string name="tab_title_4">Others</string>
+
+    <string name="washable_men">Wash and fold- men</string>
+    <string name="washable_women">Wash and fold - women</string>
+    <string name="washable_children">Wash and fold - children</string>
+    <string name="washable_others">Wash and fold - others</string>
+
+    <string name="dryclean_men">Dry cleaning - men</string>
+    <string name="dryclean_women">Dry cleaning - women</string>
+    <string name="dryclean_children">Dry cleaning - children</string>
+    <string name="dryclean_others">Dry cleaning - others</string>
+
+    <string name="laundry_men">Laundry - men</string>
+    <string name="laundry_women">Laundry - women</string>
+    <string name="laundry_children">Laundry - children</string>
+    <string name="laundry_others">Laundry - others</string>
+
+    <string name="washandlaundry_men">Wash and laundry - men</string>
+    <string name="washandlaundry_women">Wash and laundry - women</string>
+    <string name="washandlaundry_children">Wash and laundry - children</string>
+    <string name="washandlaundry_others">Wash and laundry - others</string>
+
+    <string name="mycart">My cart</string>
+
+</resources>
