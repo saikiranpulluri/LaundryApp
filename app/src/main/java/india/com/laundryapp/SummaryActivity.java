@@ -87,8 +87,8 @@ public class SummaryActivity extends AppCompatActivity {
                 childs.add(new ReciclerSummaryChild("Shirt", "RS.20", "img", "2"));
                 childs.add(new ReciclerSummaryChild("Shirt", "RS.20", "img", "2"));
                 childs.add(new ReciclerSummaryChild("Shirt", "RS.20", "img", "2"));
-                childs.add(new ReciclerSummaryChild("Shirt", "RS.20", "img", "2"));
-                childs.add(new ReciclerSummaryChild("Shirt", "RS.20", "img", "2"));
+                childs.add(new ReciclerSummaryChild("T-Shirt", "RS.20", "img", "2"));
+                childs.add(new ReciclerSummaryChild("Short", "RS.20", "img", "2"));
                 ReciclerSummaryParent parents = parent.get(i);
                 parents.setChildItemList(childs);
                 parentListItems.add(parents);
