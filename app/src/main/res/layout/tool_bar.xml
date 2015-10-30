@@ -10,32 +10,29 @@
         android:id="@+id/toolbarIconContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingRight="1dp">
+        >
 
         <FrameLayout
             android:id="@+id/frameLayout"
-            android:layout_width="40dp"
+            android:layout_width="50dp"
             android:layout_height="?android:actionBarSize"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:theme="@style/MyMaterialTheme.Base"
             >
 
-            <com.andexert.library.RippleView
-                android:id="@+id/ripple1"
-                rv_centered="true"
-                rv_rippleDuration="100"
+
+            <ImageButton
+                android:id="@+id/iconDrawerButton"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/iconDrawerButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:adjustViewBounds="true"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_menu" />
-            </com.andexert.library.RippleView>
+                android:layout_height="match_parent"
+
+                android:adjustViewBounds="true"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/ic_menu"
+                android:layout_gravity="left|center_vertical" />
+
         </FrameLayout>
 
 
@@ -51,30 +48,26 @@
             android:layout_toEndOf="@+id/frameLayout" />
 
         <FrameLayout
-            android:layout_width="40dp"
+            android:layout_width="80dp"
             android:layout_height="?android:actionBarSize"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_gravity="center_horizontal|bottom"
+            android:clickable="true"
+            android:theme="@style/MyMaterialTheme.Base"
             >
 
-            <com.andexert.library.RippleView
-                android:id="@+id/ripple2"
-                rv_centered="true"
-                rv_rippleDuration="100"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
-                <ImageView
-                    android:id="@+id/iconMarketButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:adjustViewBounds="true"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_cart" />
-            </com.andexert.library.RippleView>
+            <ImageButton
+                android:id="@+id/iconMarketButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:adjustViewBounds="true"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/ic_cart"
+                android:layout_gravity="center" />
         </FrameLayout>
     </RelativeLayout>
 </android.support.v7.widget.Toolbar>

@@ -39,4 +39,16 @@
 
     <string name="mycart">My cart</string>
     <string name="select_category">Select category</string>
+    <string name="title_activity_about_us">AboutUsActivity</string>
+    <string name="about">About L Works</string>
+    <string name="version">v1.0.0</string>
+    <string name="about_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Praesent nec neque non ligula commodo fermentum a ac turpis. Donec sagittis quam ut
+        ex feugiat suscipit. Nullam dignissim orci nec pellentesque condimentum. In sit amet
+        leo imperdiet, aliquet ex luctus, finibus neque. Vestibulum sit amet odio eget neque
+        hendrerit commodo. Morbi magna metus, fringilla lacinia erat sit amet, maximus scelerisque
+        urna. Cras eu eleifend odio. Vestibulum ante ipsum primis in faucibus orci luctus et
+        ultrices posuere cubilia Curae; Aliquam tempor quam risus. Fusce in lacinia tortor.
+        Quisque at arcu libero. Nulla eros ipsum, pellentesque in mattis sit amet, viverra a nunc.</string>
+    <string name="title_activity_location">LocationActivity</string>
 </resources>

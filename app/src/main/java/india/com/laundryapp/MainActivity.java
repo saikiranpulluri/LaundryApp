@@ -2,6 +2,7 @@ package india.com.laundryapp;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,17 +11,17 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-
-import com.andexert.library.RippleView;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.materialdrawer.AccountHeader;
@@ -43,15 +44,15 @@ import india.com.laundryapp.fragments.MenFragment;
 import india.com.laundryapp.fragments.OthersFragment;
 import india.com.laundryapp.fragments.WomenFragment;
 
-public class MainActivity extends AppCompatActivity implements RippleView.OnRippleCompleteListener{
+public class MainActivity extends AppCompatActivity implements OnClickListener{
     private Drawer result;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ArrayList<String> menuOptions = new ArrayList<String>();
     private MenuListAdapter adapter = null;
     private ListView menuList;
-    private RippleView rippleDrawerIcon;
-    private RippleView rippleCarIcon;
+    private ImageButton drawerButton;
+    private ImageButton marketButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,13 +67,13 @@ public class MainActivity extends AppCompatActivity implements RippleView.OnRipp
         tabLayout.setupWithViewPager(viewPager);
        // setupTabIcons();
         TextView toolbarTitle = (TextView)toolbar.findViewById(R.id.toolbarTitle);
-       rippleDrawerIcon =(RippleView)toolbar.findViewById(R.id.ripple1);
-        rippleCarIcon =(RippleView)toolbar.findViewById(R.id.ripple2);
+       drawerButton =(ImageButton)toolbar.findViewById(R.id.iconDrawerButton);
+        marketButton =(ImageButton)toolbar.findViewById(R.id.iconMarketButton);
 
         menuList = (ListView)findViewById(R.id.menuList);
         toolbarTitle.setText(getString(R.string.app_name));
-        rippleDrawerIcon.setOnRippleCompleteListener(this);
-        rippleCarIcon.setOnRippleCompleteListener(this);
+        drawerButton.setOnClickListener(this);
+        marketButton.setOnClickListener(this);
         SecondaryDrawerItem item1 = new SecondaryDrawerItem().withName(R.string.title_section1).withIcon(GoogleMaterial.Icon.gmd_location_on);
         SecondaryDrawerItem item2 = new SecondaryDrawerItem().withName(R.string.title_section2).withIcon(FontAwesome.Icon.faw_bus);
 
@@ -109,8 +110,36 @@ public class MainActivity extends AppCompatActivity implements RippleView.OnRipp
                 ).
                 withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
-                    public boolean onItemClick(View view, int i, IDrawerItem iDrawerItem) {
+                    public boolean onItemClick(View view, int position, IDrawerItem iDrawerItem) {
+                        Log.d("valor de i", position + "");
+                        switch (position) {
+                            case 2:
+                                // Address
+                                Intent intentAddress = new Intent(MainActivity.this, LocationActivity.class);
+                                startActivity(intentAddress);
+                                break;
+                            case 3:
+                                //Orders
 
+                                break;
+                            case 4:
+                                //Order Track
+
+                                break;
+                            case 7:
+                                //FAQs
+
+                                break;
+                            case 8:
+                                //About LWorks
+                                Intent intent = new Intent(MainActivity.this, AboutUsActivity.class);
+                                startActivity(intent);
+                                break;
+                            case 9:
+                                //Logout
+
+                                break;
+                        }
                         return false;
                     }
                 }).build();
@@ -121,8 +150,8 @@ public class MainActivity extends AppCompatActivity implements RippleView.OnRipp
     private void configureAdapterToListView(){
         menuOptions.add(0, "Wash & Fold");
         menuOptions.add(1,"Wash & Laundry");
-        menuOptions.add(2,"Laundry");
-        menuOptions.add(3,"Dry Cleaning");
+        menuOptions.add(2, "Laundry");
+        menuOptions.add(3, "Dry Cleaning");
         adapter = new MenuListAdapter(this,menuOptions);
         menuList.setAdapter(adapter);
         menuList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -164,12 +193,12 @@ public class MainActivity extends AppCompatActivity implements RippleView.OnRipp
     }
 
     @Override
-    public void onComplete(RippleView rippleView) {
-        switch (rippleView.getId()){
-            case R.id.ripple1:
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.iconDrawerButton:
                 result.openDrawer();
                 break;
-            case R.id.ripple2:
+            case R.id.iconMarketButton:
                 goToCarShopScreen();
                 break;
         }

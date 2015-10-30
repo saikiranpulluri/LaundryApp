@@ -9,6 +9,10 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.mikepenz.google_material_typeface_library.GoogleMaterial;
+import com.mikepenz.iconics.Iconics;
+import com.mikepenz.iconics.IconicsDrawable;
+
 import java.util.ArrayList;
 
 import india.com.laundryapp.adapters.OrdersAdapter;
@@ -103,7 +107,6 @@ public class OrderingActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("pressed", "true");
                 onBackPressed();
             }
         });
