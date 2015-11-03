@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="india.com.laundryapp.PaymentLoginActivity">
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/default_toolbar"></include>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your total 160 INR"
+        android:id="@+id/textView8"
+        android:textSize="30sp"
+        android:layout_below="@+id/toolBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@+id/textView8"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:id="@+id/relativeLayout13">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:id="@+id/textView9"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+        <View
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:background="@color/gray"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/textView9"
+            android:layout_toStartOf="@+id/textView9"></View>
+        <View
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:background="@color/gray"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/textView9"
+            android:layout_toEndOf="@+id/textView9"></View>
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="@dimen/buttons_width"
+        android:layout_height="wrap_content"
+        android:text="@string/faceboock"
+        android:id="@+id/button2"
+        android:theme="@style/Facebook.Theme"
+        android:layout_below="@+id/relativeLayout13"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="@dimen/buttons_width"
+        android:layout_height="wrap_content"
+        android:text="@string/google"
+        android:id="@+id/button3"
+        android:theme="@style/Google.Theme"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp" />
+</RelativeLayout>

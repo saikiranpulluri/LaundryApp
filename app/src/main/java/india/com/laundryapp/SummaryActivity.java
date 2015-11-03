@@ -1,6 +1,7 @@
 package india.com.laundryapp;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -27,10 +29,11 @@ import india.com.laundryapp.adapters.ReciclerSummaryParent;
 /**
  * Created by saikiran on 22/10/15.
  */
-public class SummaryActivity extends AppCompatActivity {
+public class SummaryActivity extends AppCompatActivity implements View.OnClickListener{
     private Spinner spinnerCategories;
     private android.support.v7.widget.RecyclerView reciclerView;
     List<String> spinnerArray =  new ArrayList<String>();
+    private ImageView gotoPaymentLogin;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +66,8 @@ public class SummaryActivity extends AppCompatActivity {
 
         reciclerView.setLayoutManager(new LinearLayoutManager(this));
         reciclerView.setAdapter(adapter2);
-
+        gotoPaymentLogin = (ImageView)findViewById(R.id.goToPaymentLogin);
+        gotoPaymentLogin.setOnClickListener(this);
     }
 
     private ArrayList<ParentListItem> generateValues(){
@@ -103,5 +107,15 @@ public class SummaryActivity extends AppCompatActivity {
         super.onBackPressed();
         startActivity(new Intent(SummaryActivity.this, MainActivity.class));
         finish();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.goToPaymentLogin:
+                Intent intent = new Intent(SummaryActivity.this, PaymentLoginActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 }

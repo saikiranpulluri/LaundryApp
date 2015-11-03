@@ -16,7 +16,7 @@ import india.com.laundryapp.R;
 import india.com.laundryapp.model.Product;
 
 /**
- * Created by mozido on 22/10/15.
+ * Created by luis on 22/10/15.
  */
 public class OrdersAdapter extends ArrayAdapter<Product>{
     private final ArrayList<Product> products;

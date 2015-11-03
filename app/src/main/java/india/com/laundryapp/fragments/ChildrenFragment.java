@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import india.com.laundryapp.R;
 
 /**
- * Created by mozido on 21/10/15.
+ * Created by luis on 21/10/15.
  */
 public class ChildrenFragment extends Fragment{
     @Override

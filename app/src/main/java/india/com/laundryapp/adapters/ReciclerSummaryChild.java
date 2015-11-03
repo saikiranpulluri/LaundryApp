@@ -1,7 +1,7 @@
 package india.com.laundryapp.adapters;
 
 /**
- * Created by mozido on 28/10/15.
+ * Created by luis on 28/10/15.
  */
 public class ReciclerSummaryChild {
     private String productName;

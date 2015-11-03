@@ -9,7 +9,7 @@ import com.bignerdranch.expandablerecyclerview.ViewHolder.ChildViewHolder;
 import india.com.laundryapp.R;
 
 /**
- * Created by mozido on 28/10/15.
+ * Created by luis on 28/10/15.
  */
 public class ReciclerSummaryChildViewHolder extends ChildViewHolder {
     public TextView productName;

@@ -51,4 +51,13 @@
         ultrices posuere cubilia Curae; Aliquam tempor quam risus. Fusce in lacinia tortor.
         Quisque at arcu libero. Nulla eros ipsum, pellentesque in mattis sit amet, viverra a nunc.</string>
     <string name="title_activity_location">LocationActivity</string>
+    <string name="add_an_address">Add Address</string>
+    <string name="no_address_yet">No Stored Address Yet</string>
+    <string name="title_activity_payment_login">PaymentLoginActivity</string>
+    <string name="login">Login</string>
+    <string name="faceboock">Facebook</string>
+    <string name="google">Google</string>
+    <string name="payment_screen">Payment</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="terms">Terms and conditions</string>
 </resources>

@@ -21,14 +21,37 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:src="@drawable/ic_map" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_address_yet"
+            android:id="@+id/txtNoAddress"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
     <Button
-        android:layout_width="140dp"
+        android:layout_width="@dimen/buttons_width"
         android:layout_height="50dp"
-        android:text="New Button"
+        android:text="@string/add_an_address"
         android:id="@+id/button"
         android:textColor="@color/white"
         android:layout_below="@+id/relativeLayout10"
         android:layout_centerHorizontal="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lstAddresses"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
 </RelativeLayout>

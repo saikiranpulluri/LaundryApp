@@ -3,25 +3,22 @@ package india.com.laundryapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListView;
+import android.widget.TextView;
 
-import java.util.ArrayList;
+public class PaymentLoginActivity extends AppCompatActivity {
 
-import india.com.laundryapp.adapters.AddressAdapter;
-import india.com.laundryapp.model.Address;
-
-public class LocationActivity extends AppCompatActivity {
-private ListView lstAddresses;
-    private ArrayList<Address> address = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_location);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolBar);
+        setContentView(R.layout.activity_payment_login);
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
+        TextView toolbarTitle = (TextView)toolbar.findViewById(R.id.toolbarTitle);
+        toolbarTitle.setText(getString(R.string.payment_screen));
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_back_white));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,10 +26,6 @@ private ListView lstAddresses;
                 onBackPressed();
             }
         });
-        lstAddresses = (ListView)findViewById(R.id.lstAddresses);
-        address.add(new Address("Home","Sai Kiran Pulluri","23 AV, street 45 L.A"));
-        AddressAdapter adapter = new AddressAdapter(this,address);
-        lstAddresses.setAdapter(adapter);
     }
 
     @Override

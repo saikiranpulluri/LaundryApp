@@ -35,4 +35,20 @@
         <item name="android:textColor">#FFF</item>
         <item name="textAllCaps">true</item>
     </style>
+
+
+
+    <style name="Google.Theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/red</item>
+        <item name="colorControlHighlight">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Facebook.Theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/facebook_blue</item>
+        <item name="colorControlHighlight">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 </resources>

@@ -6,7 +6,7 @@ import com.bignerdranch.expandablerecyclerview.Model.ParentListItem;
 import java.util.List;
 
 /**
- * Created by mozido on 28/10/15.
+ * Created by luis on 28/10/15.
  */
 public class ReciclerSummaryParent implements ParentListItem {
     private String name;

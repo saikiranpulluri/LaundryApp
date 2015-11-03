@@ -1,7 +1,7 @@
 package india.com.laundryapp.model;
 
 /**
- * Created by mozido on 22/10/15.
+ * Created by luis on 22/10/15.
  */
 public class Product {
     private String productName;

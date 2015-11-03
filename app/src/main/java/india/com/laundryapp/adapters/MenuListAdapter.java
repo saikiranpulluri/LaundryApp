@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import india.com.laundryapp.R;
 
 /**
- * Created by mozido on 21/10/15.
+ * Created by luis on 21/10/15.
  */
 public class MenuListAdapter extends ArrayAdapter<String> {
 
